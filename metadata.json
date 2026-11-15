@@ -1,0 +1,6 @@
+{
+  "name": "Dynamic Markdown Calculator and Price Log",
+  "description": "Dynamic Markdown Calculator and Price Log helps food vendors track prices as simulated time passes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
