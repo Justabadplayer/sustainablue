@@ -53,10 +53,10 @@ export function calculateCurrentPrice(
   if (t >= 1) {
     price = listing.minimumPrice;
   } else {
-    const rawPrice =
-      listing.startingPrice - (listing.startingPrice - listing.minimumPrice) * (t * t);
-    // Round to cents and guarantee it never drops below minimum price
-    price = Math.round(rawPrice * 100) / 100;
+    const rawDiscount = (listing.startingPrice - listing.minimumPrice) * (t * t);
+    // Round the discount to five-centavo steps from the starting price.
+    const discountSteps = Math.round(rawDiscount * 20);
+    price = (Math.round(listing.startingPrice * 100) - discountSteps * 5) / 100;
     if (price < listing.minimumPrice) {
       price = listing.minimumPrice;
     }
